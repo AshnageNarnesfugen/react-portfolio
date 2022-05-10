@@ -1,12 +1,14 @@
 //import logo from './logo.svg';
 import React, {Component} from 'react';
+
+
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
+  BrowserRouter as Router
 } from 'react-router-dom';
+
 import './App.css';
-import { NotFoundPage, Contact, About, Home  } from './pages';
+//import { NotFoundPage, Story, Contact, About, Home  } from './pages';
+import AnimatedRoutes from './layout/animatedroute';
 import { Nav, Foot } from './layout';
 
  class App extends Component {
@@ -14,20 +16,7 @@ import { Nav, Foot } from './layout';
     return <>
       <Router>
         <Nav/>
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route exact path='/about'>
-            <About />
-          </Route>
-          <Route exact path='/contact'>
-            <Contact />
-          </Route>
-          <Route exact path={'*' || '/404'}>
-            <NotFoundPage />
-          </Route>
-        </Switch>
+        <AnimatedRoutes />
         <Foot/>
       </Router>
     </>

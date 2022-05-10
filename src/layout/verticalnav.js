@@ -1,16 +1,22 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const LateralNav = styled.div`
-    width: 100%;
-    height: 100%;
+const LateralNav = styled.div `
+    height: fit-content;
+    margin: 10px;
+    border-radius: 10px;
     background: rgba(70, 111, 133, 1);
+    padding: 10px;
     @media (max-width: 768px) {
+        width: max-content;
         height: max-content;
     }
 `
-const UnorderedList = styled.ul`
+const UnorderedList = styled.ul `
     display: grid;
+    padding-inline-start: 10px;
+    margin-block-start: 0;
+    margin-block-end: 0;
     @media (max-width: 768px) {
         margin: 0;
         margin-block-start: 0;
@@ -24,11 +30,9 @@ const UnorderedList = styled.ul`
 `;
 
 const VerticalNav = (props) => {
-    return  <LateralNav>
-                <UnorderedList>
-                    {props.children}
-                </UnorderedList> 
-            </LateralNav>
+    return <LateralNav >
+                <UnorderedList > { props.children } </UnorderedList>  
+            </LateralNav >
 };
 
 export default VerticalNav;

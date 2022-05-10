@@ -1,13 +1,15 @@
 import React from 'react';
-import { Layout } from '../layout';
-import Banner from '../layout/banner'
+import { Layout } from '../../layout';
+import Banner from '../../layout/banner'
 //import Divider from '../layout/divider'
-import BannerImage from '../bannerimages/contact-header.jpg'
+import BannerImage from '../../bannerimages/contact-header.jpg'
 import emailjs, { init } from 'emailjs-com'
 import styled from 'styled-components'
-import '../pages/styles/form.css';
-import Buildings from '../bannerimages/buildings.jpg'
+import '../../pages/styles/form.css';
+import Buildings from '../../bannerimages/buildings.jpg'
+import { motion } from 'framer-motion'
 const UserID = init("user_0J0XEtg1MDIAHVo5zevl5")
+
 //import HubspotForm from 'react-hubspot-form'
 
 
@@ -23,10 +25,12 @@ const Row = styled.div`
 const Col = styled.div`
     display: grid;
     width: 50%;
+    margin: 10px;
+    border-radius: 10px;
     place-content: stretch;
     backdrop-filter: blur(20px);
     @media (max-width: 768px) {
-        width: 100%;
+        width: auto;
     }
 `;
 
@@ -37,6 +41,7 @@ const Decoration = styled.div`
     background-image: url("${Buildings}");
     background-size: cover;
     background-position: center;
+    
     /*&:after {
         content: "";
         background-color: #DFDBE5;
@@ -95,7 +100,12 @@ const Form = () => {
 }
 
 const Contact = () => (
-    <>
+    <motion.div
+    className="main-frame"
+    initial={{ opacity: 0, filter: 'blur(10px)', transition: { duration: 0.5 } }}
+    animate={{ opacity:1, filter: 'blur(0px)', transition: { duration: 0.5 } }}
+    exit={{ opacity:0, filter: 'blur(10px)', transition: { duration: 0.5 } }}
+    >
         <Banner img={BannerImage}>
             {/*hex="00ADA2"*/}
             Contact Us
@@ -107,12 +117,12 @@ const Contact = () => (
                 </Col>
                 <Col className="deco">
                     <Decoration>
-                        <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59231.84751622181!2d-100.10189461481428!3d25.651331250547358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662c2cccf65f28f%3A0x9bad0e30fbc25fa1!2sReal%20de%20San%20Roberto%20210%2C%20Real%20de%20San%20Jos%C3%A9(La%20Ciudadela)%2C%2067250%20Ju%C3%A1rez%2C%20N.L.!5e0!3m2!1ses-419!2smx!4v1627588118559!5m2!1ses-419!2smx" width="100%" height="100%" style={{border: '0'}} allowFullScreen={true} loading="lazy"></iframe>
+                        <iframe style={{borderRadius: '10px', border: '0'}} title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59231.84751622181!2d-100.10189461481428!3d25.651331250547358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662c2cccf65f28f%3A0x9bad0e30fbc25fa1!2sReal%20de%20San%20Roberto%20210%2C%20Real%20de%20San%20Jos%C3%A9(La%20Ciudadela)%2C%2067250%20Ju%C3%A1rez%2C%20N.L.!5e0!3m2!1ses-419!2smx!4v1627588118559!5m2!1ses-419!2smx" width="100%" height="100%" allowFullScreen={true} loading="lazy"></iframe>
                     </Decoration>
                 </Col> 
             </Row>
         </Layout>
-    </>
+    </motion.div>
 );
 
 export default Contact;

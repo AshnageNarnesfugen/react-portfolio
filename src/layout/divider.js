@@ -1,18 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components'
-
-const LoadAnimationOpacity = keyframes`
-    from {
-        opacity: 0;
-        filter: blur(10px);
-        transform: translateY(-100px);
-    }
-    to {
-        opacity: 1;
-        filter: blur(0px);
-        transform: translateY(0px);
-    }
-`;
+import styled from 'styled-components'
 
 const Division = styled.div `
     width: auto;
@@ -20,16 +7,18 @@ const Division = styled.div `
     background: rgba(173, 219, 222, 0.25);
     backdrop-filter: blur(15px);
     padding: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 1.5%;
-    margin-bottom: 1.5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
     box-shadow: 5px 5px 10px #222222;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
-    animation: ${LoadAnimationOpacity} 0.5s linear ;
     color: white;
     font-size: 1.25rem;
+    @media (max-width: 767px) {
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+    }
 `;
 
 const Divider = (props) => (

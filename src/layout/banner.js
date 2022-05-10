@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components'
 import useColorThief from 'use-color-thief';
 
-const Loadbackground = keyframes`
+const Loadbackground = keyframes `
     from {
         opacity: 1;
     }
@@ -11,8 +11,8 @@ const Loadbackground = keyframes`
     }
 `;
 
-const Bannerimage = styled.div`
-    width: 100%;
+const Bannerimage = styled.div `
+    width: auto;
     height: 100%;
     padding-top: 10%;
     padding-bottom: 10%;
@@ -26,9 +26,11 @@ const Bannerimage = styled.div`
     text-align: center;
     background-repeat: no-repeat;
     image-rendering: auto;
+    margin: 10px;
+    border-radius: 10px;
 `;
 
-const Filter = styled.div`
+const Filter = styled.div `
     position: absolute;
     top: 0;
     bottom: 0;
@@ -41,7 +43,7 @@ const Filter = styled.div`
     animation: ${Loadbackground} 1s linear ;
 `;
 
-const Pagetitle = styled.h1`
+const Pagetitle = styled.h1 `
     margin: 10px;
     font-size: 4em;
     text-shadow: 5px 5px 0px black;
@@ -54,15 +56,13 @@ const Banner = (props) => {
         format: 'hex',
         colorCount: 10,
         quality: 10,
-    });  
-    
-    return  <>
-                <Bannerimage image={props.img}>
-                    <Filter color={color} />
-                    <Pagetitle>
-                        {props.children}
-                    </Pagetitle>
-                </Bannerimage>
+    });
+
+    return <>
+                <Bannerimage image = { props.img } >
+                    <Filter color = { color }/> 
+                    <Pagetitle > { props.children } </Pagetitle> 
+                </Bannerimage>                
             </>
 };
 

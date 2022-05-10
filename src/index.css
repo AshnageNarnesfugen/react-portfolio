@@ -17,6 +17,15 @@ body {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow-x: hidden;
+}
+
+.main-frame {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 #root {
@@ -36,10 +45,12 @@ code {
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #0F2027;
 }
 
 ::-webkit-scrollbar-thumb {
     background: rgb(0, 73, 117);
     background: linear-gradient(0deg, rgb(173, 219, 222) 0%, rgb(109, 138, 140) 100%);
+    border-radius: 5px;
+    margin: 1px;
 }

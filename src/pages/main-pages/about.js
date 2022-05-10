@@ -1,12 +1,18 @@
 import React from 'react';
-import { Layout } from '../layout';
-import Banner from '../layout/banner'
-import Divider from '../layout/divider'
-import BannerImage from '../bannerimages/Launch-website-banner-US.jpg'
+import { Layout } from '../../layout';
+import Banner from '../../layout/banner'
+import Divider from '../../layout/divider'
+import BannerImage from '../../bannerimages/Launch-website-banner-US.jpg'
+import { motion } from 'framer-motion'
 //import styled from 'styled-components'
 
 const About = () => (
-    <>
+    <motion.div
+    className="main-frame"
+    initial={{ opacity: 0, filter: 'blur(10px)', transition: { duration: 0.5 } }}
+    animate={{ opacity:1, filter: 'blur(0px)', transition: { duration: 0.5 } }}
+    exit={{ opacity:0, filter: 'blur(10px)', transition: { duration: 0.5 } }}
+    >
         <Banner img={BannerImage}>
             {/*hex="00AD4B"*/}
             About Us
@@ -24,7 +30,7 @@ const About = () => (
             </Divider>
             
         </Layout>
-    </>
+    </motion.div>
 );
 
 export default About;
