@@ -2,9 +2,10 @@ import React from 'react';
 import {
     Switch,
     Route,
-    useLocation
+    useLocation,
+    Redirect
 } from 'react-router-dom';
-import { NotFoundPage, Story, Contact, About, Home } from '../pages/index';
+import { Story, Contact, About, Home } from '../pages/index';
 import { AnimatePresence } from 'framer-motion'
 
 const AnimatedRoutes = () => {
@@ -24,8 +25,8 @@ const AnimatedRoutes = () => {
                 <Route exact path='/story'>
                     <Story />
                 </Route>
-                <Route>
-                    <NotFoundPage />
+                <Route path='*'>
+                    <Redirect to={{ ...location, state: { from: '404' } }} />
                 </Route>
             </Switch>
         </AnimatePresence>
