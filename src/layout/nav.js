@@ -76,29 +76,29 @@ const Nav = () => {
             <NavLink
               exact={true}
               activeClassName="is-active"
-              to="home"
+              to="/home"
               onClick={audio}
             >
               Home
             </NavLink>
           </Listitem>
           <Listitem>
-            <NavLink activeClassName="is-active" to="about" onClick={audio}>
+            <NavLink activeClassName="is-active" to="/about" onClick={audio}>
               About
             </NavLink>
           </Listitem>
           <Listitem>
-            <NavLink activeClassName="is-active" to="story" onClick={audio}>
+            <NavLink activeClassName="is-active" to="/story" onClick={audio}>
             Story
             </NavLink>
           </Listitem>
           <Listitem>
-            <NavLink activeClassName="is-active" to="contact" onClick={audio}>
+            <NavLink activeClassName="is-active" to="/contact" onClick={audio}>
               Contact
             </NavLink>
           </Listitem>
           <Listitem>
-            <NavLink activeClassName="is-active" to="404" onClick={audio}>
+            <NavLink activeClassName="is-active" to="/404" onClick={audio}>
             404
             </NavLink>
           </Listitem>

@@ -12,19 +12,19 @@ const AnimatedRoutes = () => {
     return (
         <AnimatePresence>
             <Switch location={location} key={location.pathname}>
-                <Route exact path='home'>
+                <Route exact path='/home'>
                     <Home />
                 </Route>
-                <Route exact path='about'>
+                <Route exact path='/about'>
                     <About />
                 </Route>
-                <Route exact path='contact'>
+                <Route exact path='/contact'>
                     <Contact />
                 </Route>
-                <Route exact path='story'>
+                <Route exact path='/story'>
                     <Story />
                 </Route>
-                <Route exact path={'*' || '404'}>
+                <Route exact path={'*' || '/404'}>
                     <NotFoundPage />
                 </Route>
             </Switch>
