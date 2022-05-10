@@ -76,7 +76,7 @@ const Nav = () => {
             <NavLink
               exact={true}
               activeClassName="is-active"
-              to="/home"
+              to="/"
               onClick={audio}
             >
               Home

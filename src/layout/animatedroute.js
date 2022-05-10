@@ -12,7 +12,7 @@ const AnimatedRoutes = () => {
     return (
         <AnimatePresence>
             <Switch location={location} key={location.pathname}>
-                <Route exact path='/home'>
+                <Route exact path='/'>
                     <Home />
                 </Route>
                 <Route exact path='/about'>
