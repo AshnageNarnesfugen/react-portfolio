@@ -24,7 +24,7 @@ const AnimatedRoutes = () => {
                 <Route exact path='/story'>
                     <Story />
                 </Route>
-                <Route exact path={'*' || '/404'}>
+                <Route>
                     <NotFoundPage />
                 </Route>
             </Switch>
